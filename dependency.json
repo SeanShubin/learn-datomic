@@ -1,0 +1,31 @@
+{
+    "searchPaths": [
+        [ "console", "target", "template-scala-console.jar" ]
+    ],
+    "styleSheet": [ "dependency.css" ],
+    "relevantDependencyPattern": {
+        "includeRegex": [ "com/seanshubin/template/scala/console/.*" ],
+        "excludeRegex": [ ]
+    },
+    "trimRegex": "^com/seanshubin/template/scala/console/",
+    "classFileNamePattern": {
+        "includeRegex": [ ".*\\.class" ],
+        "excludeRegex": [ ]
+    },
+    "zipFileNamePattern": {
+        "includeRegex": [ ".*\\.zip", ".*\\.war", ".*\\.jar" ],
+        "excludeRegex": [ ]
+    },
+    "generatedReportDirectory": [ "console", "target", "dependency-report" ],
+    "classLimits": {
+        "depth": 11,
+        "complexity": 100,
+        "cycleCount": 0
+    },
+    "packageLimits": {
+        "depth": 4,
+        "complexity": 10,
+        "cycleCount": 0
+    },
+    "failIfAnyLimitExceeded": true
+}
