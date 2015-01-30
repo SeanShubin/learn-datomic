@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.seanshubin</groupId>
-    <artifactId>template-scala-console</artifactId>
-    <name>template-scala-console</name>
+    <artifactId>learn-datomic</artifactId>
+    <name>learn-datomic</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>

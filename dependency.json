@@ -1,13 +1,13 @@
 {
     "searchPaths": [
-        [ "console", "target", "template-scala-console.jar" ]
+        [ "console", "target", "learn-datomic.jar" ]
     ],
     "styleSheet": [ "dependency.css" ],
     "relevantDependencyPattern": {
-        "includeRegex": [ "com/seanshubin/template/scala/console/.*" ],
+        "includeRegex": [ "com/seanshubin/learn/datomic/.*" ],
         "excludeRegex": [ ]
     },
-    "trimRegex": "^com/seanshubin/template/scala/console/",
+    "trimRegex": "^com/seanshubin/learn/datomic/",
     "classFileNamePattern": {
         "includeRegex": [ ".*\\.class" ],
         "excludeRegex": [ ]

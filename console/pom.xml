@@ -2,17 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.seanshubin</groupId>
-        <artifactId>template-scala-console</artifactId>
+        <artifactId>learn-datomic</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>template-scala-console-console</artifactId>
-    <name>template-scala-console-console</name>
+    <artifactId>learn-datomic-console</artifactId>
+    <name>learn-datomic-console</name>
     <dependencies>
-        <dependency>
-            <groupId>com.seanshubin</groupId>
-            <artifactId>template-scala-console-core</artifactId>
-            <version>${pom.parent.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
@@ -41,12 +36,15 @@
             <plugin>
                 <groupId>org.dstovall</groupId>
                 <artifactId>onejar-maven-plugin</artifactId>
-                <version>1.4.4</version>
+                <version>1.4.5</version>
                 <executions>
                     <execution>
                         <configuration>
                             <mainClass>com.seanshubin.template.scala.console.console.ConsoleApplication</mainClass>
-                            <filename>template-scala-console.jar</filename>
+                            <filename>learn-datomic.jar</filename>
+                            <manifestEntries>
+                                <One-Jar-URL-Factory>com.simontuffs.onejar.JarClassLoader$OneJarURLFactory</One-Jar-URL-Factory>
+                            </manifestEntries>
                         </configuration>
                         <goals>
                             <goal>one-jar</goal>
