@@ -26,4 +26,4 @@ Launch Datomic
 * This is not necessary if you are using the embedded in-memory database, datomic:mem://sample
 * In the datomic directory run
 
-    bin/transactor config/samples/free-transactor-template.properties
+        bin/transactor config/samples/free-transactor-template.properties
