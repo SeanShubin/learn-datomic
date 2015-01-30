@@ -14,12 +14,11 @@ Install Datomic
 * In the datomic directory, run bin/maven-install
 * Edit the pom.xml file so that the datomic version matches, for example:
 
-
-    <dependency>
-        <groupId>com.datomic</groupId>
-        <artifactId>datomic-free</artifactId>
-        <version>0.9.5130</version>
-    </dependency>
+        <dependency>
+            <groupId>com.datomic</groupId>
+            <artifactId>datomic-free</artifactId>
+            <version>0.9.5130</version>
+        </dependency>
 
 Launch Datomic
 ===
