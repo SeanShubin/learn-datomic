@@ -1,4 +1,4 @@
-package com.seanshubin.template.scala.console.console
+package com.seanshubin.learn.datomic
 
 import datomic.{Connection, Peer, Util}
 

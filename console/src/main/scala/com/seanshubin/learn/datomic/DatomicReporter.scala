@@ -1,4 +1,4 @@
-package com.seanshubin.template.scala.console.console
+package com.seanshubin.learn.datomic
 
 import java.util.{ArrayList, Collection => JavaCollection, HashMap, List => JavaList, Map => JavaMap}
 

@@ -1,43 +1,38 @@
-package com.seanshubin.template.scala.console.console
-
-import java.util.{Map => JavaMap}
+package com.seanshubin.learn.datomic
 
 import datomic.{Connection, Peer, Util}
 
-object ParentChildSetOfReferences extends App {
+object ParentChildReference extends App {
   def transactElectionSchema(connection: Connection) {
-    def createColumn(namespace: String, name: String, dataType: String, cardinality: String) = {
+    def createColumn(namespace: String, name: String, dataType: String) = {
       Util.map(
         ":db/id", Peer.tempid(":db.part/db"),
         ":db/ident", s":$namespace/$name",
         ":db/valueType", s":db.type/$dataType",
-        ":db/cardinality", ":db.cardinality/" + cardinality,
+        ":db/cardinality", ":db.cardinality/one",
         ":db.install/_attribute", ":db.part/db")
     }
-    val electionName = createColumn("election", "name", "string", "one")
-    val electionCandidate = createColumn("election", "candidate", "ref", "many")
-    val candidateName = createColumn("candidate", "name", "string", "one")
+    val electionName = createColumn("election", "name", "string")
+    val candidateName = createColumn("candidate", "name", "string")
+    val candidateElection = createColumn("candidate", "election", "ref")
     connection.transact(Util.list(
       electionName,
-      electionCandidate,
-      candidateName)).get()
+      candidateName,
+      candidateElection)).get()
   }
 
   def transactElectionSampleData(connection: Connection) {
     def transactElection(connection: Connection, electionName: String, candidateNames: Seq[String]) {
       val electionId = Peer.tempid(":db.part/user")
       val election = Util.map(":db/id", electionId, ":election/name", electionName)
-      def createCandidateDatom(candidateName: String): Seq[JavaMap[_, _]] = {
+      def createCandidateDatom(candidateName: String) = {
         val candidateId = Peer.tempid(":db.part/user")
-        val candidateNameData = Util.map(
+        Util.map(
           ":db/id", candidateId,
-          ":candidate/name", candidateName)
-        val electionCandidate = Util.map(
-          ":db/id", electionId,
-          ":election/candidate", candidateId)
-        Seq(candidateNameData, electionCandidate)
+          ":candidate/name", candidateName,
+          ":candidate/election", electionId)
       }
-      val candidates = candidateNames.flatMap(createCandidateDatom)
+      val candidates = candidateNames.map(createCandidateDatom)
       val datoms = election +: candidates
       connection.transact(Util.list(datoms: _*)).get()
     }
@@ -49,7 +44,7 @@ object ParentChildSetOfReferences extends App {
   val uri = "datomic:mem://sample"
   Peer.createDatabase(uri)
   val connection = Peer.connect(uri)
-  val baseline = connection.db();
+  val baseline = connection.db()
   transactElectionSchema(connection)
   transactElectionSampleData(connection)
   val db = connection.db()
