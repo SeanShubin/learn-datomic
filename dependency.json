@@ -1,31 +1,52 @@
 {
-    "searchPaths": [
-        [ "console", "target", "learn-datomic.jar" ]
+  "searchPaths": [
+    [
+      "console",
+      "target",
+      "learn-datomic.jar"
+    ]
+  ],
+  "scrubGroupingPattern": "com/seanshubin/([^/]+).*",
+  "styleSheet": ["dependency.css"],
+  "relevantDependencyPattern": {
+    "includeRegex": ["com/seanshubin/learn/datomic/.*"],
+    "excludeRegex": []
+  },
+  "trimRegex": "^com/seanshubin/learn/datomic/",
+  "classFileNamePattern": {
+    "includeRegex": [".*\\.class"],
+    "excludeRegex": []
+  },
+  "zipFileNamePattern": {
+    "includeRegex": [
+      ".*\\.zip",
+      ".*\\.war",
+      ".*\\.jar"
     ],
-    "styleSheet": [ "dependency.css" ],
-    "relevantDependencyPattern": {
-        "includeRegex": [ "com/seanshubin/learn/datomic/.*" ],
-        "excludeRegex": [ ]
-    },
-    "trimRegex": "^com/seanshubin/learn/datomic/",
-    "classFileNamePattern": {
-        "includeRegex": [ ".*\\.class" ],
-        "excludeRegex": [ ]
-    },
-    "zipFileNamePattern": {
-        "includeRegex": [ ".*\\.zip", ".*\\.war", ".*\\.jar" ],
-        "excludeRegex": [ ]
-    },
-    "generatedReportDirectory": [ "console", "target", "dependency-report" ],
-    "classLimits": {
-        "depth": 11,
-        "complexity": 100,
-        "cycleCount": 0
-    },
-    "packageLimits": {
-        "depth": 4,
-        "complexity": 10,
-        "cycleCount": 0
-    },
-    "failIfAnyLimitExceeded": true
+    "excludeRegex": []
+  },
+  "generatedReportDirectory": [
+    "console",
+    "target",
+    "dependency-report"
+  ],
+  "classLimits": {
+    "depth": 11,
+    "complexity": 100,
+    "cycleCount": 0,
+    "cycleSize": 0
+  },
+  "packageLimits": {
+    "depth": 4,
+    "complexity": 10,
+    "cycleCount": 0,
+    "cycleSize": 0
+  },
+  "groupingLimits": {
+    "depth": 1,
+    "complexity": 0,
+    "cycleCount": 0,
+    "cycleSize": 0
+  },
+  "failIfAnyLimitExceeded": true
 }
