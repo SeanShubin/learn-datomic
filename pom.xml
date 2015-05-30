@@ -49,7 +49,7 @@
             <dependency>
                 <groupId>com.datomic</groupId>
                 <artifactId>datomic-free</artifactId>
-                <version>0.9.5130</version>
+                <version>0.9.5173</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
