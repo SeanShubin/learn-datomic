@@ -1,0 +1,1 @@
+[:find ?e :in $ :where [?e :db/ident :task/next-ordinal]]

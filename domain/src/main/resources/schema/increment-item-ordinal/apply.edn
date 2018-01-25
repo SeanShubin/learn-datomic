@@ -1,0 +1,10 @@
+{:db/id    #db/id [:db.part/user]
+ :db/ident :increment-task-next-ordinal
+ :db/fn    #db/fn {:lang   "clojure"
+                   :params [db]
+                   :code   [[:db/add
+                             :task/next-ordinal
+                             :value/long
+                             (->
+                               (d/entity db :task/next-ordinal)
+                               :value/long (+ 1))]]}}

@@ -1,0 +1,1 @@
+Initialize item next ordinal to 1

@@ -1,2 +1,2 @@
 #!/bin/bash
-java -jar console/target/learn-datomic.jar
+java -jar console/target/prototype-datomic.jar environment.txt

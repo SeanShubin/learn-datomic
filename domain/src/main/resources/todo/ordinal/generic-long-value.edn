@@ -1,0 +1,5 @@
+{
+ :db/id                 #db/id [:db.part/db]
+ :db/ident              :value/long :db/valueType :db.type/long :db/cardinality :db.cardinality/one :db/doc "generic attribute for values of type long"
+ :db.install/_attribute :db.part/db
+ }

@@ -1,0 +1,33 @@
+{
+  reportDir console/target/detangled
+  searchPaths
+  [
+    ./console/target/learn-datomic.jar
+  ]
+  level 2
+  startsWith
+  {
+    include
+    [
+      [
+        com
+        seanshubin
+        learn
+        datomic
+      ]
+    ]
+    exclude []
+    drop
+    [
+      [
+        com
+        seanshubin
+        learn
+        datomic
+      ]
+    ]
+  }
+  ignoreFiles []
+  canFailBuild true
+  allowedInCycle console/detangler-allowed-in-cycle.txt
+}

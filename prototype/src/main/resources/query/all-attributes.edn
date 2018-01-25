@@ -1,0 +1,5 @@
+[
+ :find ?identity
+ :where [_ :db.install/attribute ?attribute]
+ [?attribute :db/ident ?identity]
+ ]

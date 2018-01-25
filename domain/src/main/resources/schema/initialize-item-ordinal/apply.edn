@@ -1,0 +1,2 @@
+{:db/id    #db/id [:db.part/user -1]
+ :db/ident :task/next-ordinal :value/long 1}

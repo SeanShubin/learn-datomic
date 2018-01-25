@@ -1,0 +1,11 @@
+{:db/id    #db/id [:db.part/user]
+ :db/ident :list-items
+ :db/fn    #db/fn{:lang   "clojure"
+                  :params [db]
+                  :code   (q db {:find  ?ordinal ?name ?done
+                                 :in    db
+                                 :where [
+                                         [?entity :task/ordinal/long ?ordinal]
+                                         [?entity :task/name/string ?name]
+                                         [?entity :task/done/boolean ?done]
+                                         ]})}}

@@ -1,0 +1,49 @@
+{
+  prefix [com seanshubin]
+  name [learn datomic]
+  description 'Learning project for datomic'
+  version 0.1-SNAPSHOT
+  developer {
+    name 'Sean Shubin'
+    githubName SeanShubin
+    mavenUserName SeanShubin
+    organization 'Sean Shubin'
+    url http://seanshubin.com/
+  }
+  dependencies {
+    scala-library {
+      group org.scala-lang
+      artifact scala-library
+    }
+    scala-test {
+      group org.scalatest
+      artifact scalatest_2.12
+      scope test
+    }
+    devon {
+      group    com.seanshubin.devon
+      artifact devon-domain
+    }
+    datomic {
+      group           com.datomic
+      artifact        datomic-free
+      lockedAtVersion 0.9.5302
+    }
+
+    
+  }
+  global [scala-library scala-test]
+  modules {
+    compare        []
+    console        [ domain ]
+    contract       []
+    contract-test  [ contract ]
+    domain         [ devon contract contract-test datomic ]
+    prototype      [ devon contract contract-test datomic compare ]
+    experiment     [ datomic ]
+  }
+  detangler [console]
+  consoleEntryPoint {
+    console com.seanshubin.prototype.datomic.console.ConsoleApplication
+  }
+}

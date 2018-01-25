@@ -1,0 +1,5 @@
+[
+ :find ?entity ?value
+ :where [?entity :fressian/tag :string]
+ [?entity _ ?value]
+ ]

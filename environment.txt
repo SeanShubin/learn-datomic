@@ -1,0 +1,9 @@
+{
+  datomicUri datomic:mem://todo
+  smokeTesterDatomicUri datomic:mem://smoke-tester
+  comment
+    [
+      datomic:mem://todo
+      datomic:free://localhost:4334/todo
+    ]
+}
